@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}Articles{% endblock title %}
+
+{% block content %}
+    <h1>Liste des articles</h1>
+
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+          {% for arcticle in arcticles %}
+          {% comment %} <div v-for="arcticle in arcticles" class="col">
+            <div class="card">
+                <img class="card-img-top" src="{{ arcticle.image.url }}" />
+                <div class="card-body">
+                    <a href="#">
+                        <h3 class="card-title fw-bold">{{ arcticle.title }}</h3>
+                    </a>
+                    <p class="card-text">{{ arcticle.resume }}</p>
+                </div>
+            </div>
+          </div> {% endcomment %}
+          <!-- Card with an image on left -->
+          <div v-for="arcticle in arcticles" class="col">
+
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="{{ arcticle.image.url }}" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ arcticle.title }}</h5>
+                    <p class="card-text">{{ arcticle.resume }}</p>
+                    <a class="btn btn-primary btn-sm " href="#" role="button">Read More</a>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Card with an image on left -->
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+    
+    </div>
+
+{% endblock content %}
